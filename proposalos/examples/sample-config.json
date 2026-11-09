@@ -1,0 +1,16 @@
+{
+  "businessName": "סטודיו גליל",
+  "ownerName": "נועה בר",
+  "idLabel": "ע.מ",
+  "idNumber": "000000018",
+  "phone": "050-0000000",
+  "email": "hello@example.com",
+  "website": "example.com",
+  "address": "",
+  "vat": "authorized",
+  "accent": "#17352c",
+  "logo": "",
+  "validityDays": 14,
+  "paymentDefault": "50% מקדמה עם החתימה ו 50% במסירה",
+  "jurisdiction": "חיפה"
+}

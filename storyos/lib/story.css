@@ -1,0 +1,47 @@
+/* Native Instagram story look. Injected by render.mjs; the font url below is replaced with the embedded Rubik font. */
+@font-face{font-family:R;src:url(FONT_URL);font-weight:300 900}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden}
+body{background:#000;font-family:R;font-weight:600;position:relative;direction:rtl}
+
+/* IG safe area: 64 sides, 250 top, 340 bottom (reply bar). All content lives in .stack */
+.stack{position:absolute;left:64px;right:64px;top:250px;bottom:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px}
+.stack.top{justify-content:flex-start}.stack.bottom{justify-content:flex-end}.stack.spread{justify-content:space-between}
+.stack>*{flex-shrink:0}
+.gap0{gap:0}
+.grp{display:flex;flex-direction:column;align-items:center;gap:22px}
+.rest{flex:1 1 auto!important;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:90px;width:100%}
+
+/* text box: one <span> per line. .blue = IG blue, .white = white box black text. Geometry is set by story.js */
+.box{position:relative;text-align:center;width:max-content;max-width:952px;z-index:1;display:flex;flex-direction:column;align-items:center;--k:1;--rv:8;--rc:12}
+.box.big{--k:1.15;--rv:9;--rc:14}
+.box.white{--k:.85;--rv:7;--rc:11}
+.box.white.big{--k:1;--rv:8;--rc:12}
+.box span{display:block;line-height:1;padding:0 calc(22px*var(--k));white-space:nowrap}
+.box span.emo{display:inline;padding:0;background:none}
+.blue span{background:#3897F0;color:#fff}
+.white span{background:#fff;color:#000}
+/* text colored like the box but without a box (e.g. a blue title line) */
+.ink{color:#3897F0}
+
+/* plain white text, no box, for secondary lines */
+.plain{color:#fff;font-size:50px;font-weight:700;line-height:1.35;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.45)}
+.plain.sm{font-size:42px}
+
+/* Emoji png, centred in its line by story.js */
+.emo{font-family:"Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif;font-size:.95em;line-height:1;vertical-align:-.04em;margin-inline-start:8px;font-weight:400}
+
+/* contained media card: never a border, never full-bleed under text. Add .face when a person is in it (QA keeps text off it) */
+.shot{border-radius:24px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+.shot img,.shot video{display:block;width:100%}
+
+/* full-bleed background (screen photo etc.). Never a photo of a person under text */
+.full{position:absolute;inset:0;background-position:center;background-size:cover}
+.full:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55))}
+.full.dim:after{background:rgba(0,0,0,.7)} /* bright screens: dim so boxes stand out */
+
+/* real IG question-sticker response card */
+.qc{width:734px;border-radius:36px;overflow:hidden;text-align:center}
+.qh{background:#0c0f14;color:#fff;font-size:38px;font-weight:700;height:131px;display:flex;align-items:center;justify-content:center;gap:12px}
+.qh .emo{font-size:44px;margin:0}
+.qb{background:#fff;color:#262626;font-size:56px;font-weight:700;line-height:1.22;padding:62px 56px 66px}

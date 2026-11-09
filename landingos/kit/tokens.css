@@ -1,0 +1,53 @@
+/* LandingOS tokens. scripts/palette.mjs rewrites only the block between the two palette markers. */
+:root{
+  /* palette:start */
+  --night:#11142e; --flare:#ffc22e; --field:#a9b6ff;
+  --chalk:#f1f1f6; --on-flare:#231a02; --on-field:#14172b;
+  /* palette:end */
+
+  /* surfaces: the night tone stepped toward chalk, plus one deeper */
+  --pit:color-mix(in oklab,var(--night) 70%,#000);
+  --shelf-1:color-mix(in oklab,var(--night) 94%,var(--chalk));
+  --shelf-2:color-mix(in oklab,var(--night) 88%,var(--chalk));
+  --shelf-3:color-mix(in oklab,var(--night) 78%,var(--chalk));
+
+  /* ink roles. Colour bands redefine these, so components never need a variant */
+  --text:var(--chalk);
+  --text-2:color-mix(in oklab,var(--chalk) 80%,var(--night));
+  --text-3:color-mix(in oklab,var(--chalk) 62%,var(--night));
+  --em:var(--flare);
+  --em-on:var(--on-flare);
+  --line:color-mix(in oklab,var(--field) 24%,var(--night));
+  --line-2:color-mix(in oklab,var(--field) 55%,var(--night));
+  --tx:color-mix(in oklab,var(--field) 17%,transparent);
+  --flare-edge:color-mix(in oklab,var(--flare) 66%,#000);
+  --good:#7ee2a8;
+  --bad:#ff8a73;
+
+  /* type: condensed poster face over a humanist text face */
+  --face-poster:"Karantina","Assistant",sans-serif;
+  --face-text:"Assistant",system-ui,"Segoe UI",Arial,sans-serif;
+  --fs-fine:clamp(15px,.3vw + 14px,16.5px);
+  --fs-body:clamp(18px,.45vw + 16.4px,20.5px);
+  --fs-lede:clamp(21px,1.15vw + 17px,29px);
+  --fs-h3:clamp(36px,2.3vw + 27px,58px);
+  --fs-h2:clamp(58px,6.4vw + 33px,128px);
+  --fs-h1:clamp(74px,9.2vw + 38px,178px);
+  --fs-shock:clamp(124px,27vw + 18px,430px);
+
+  /* space: steps grow by about 1.6 */
+  --s-1:6px; --s-2:11px; --s-3:18px; --s-4:29px; --s-5:46px; --s-6:74px; --s-7:118px;
+  --gutter:clamp(20px,4.4vw + 4px,72px);
+  --page:1260px;
+  --band:clamp(74px,8.2vw + 42px,184px);
+
+  /* shape and depth: print is square, discs are perfectly round */
+  --r-1:3px; --r-2:7px; --r-disc:50%;
+  --cast-1:0 9px 16px -11px rgb(0 0 0/.55);
+  --cast-2:0 30px 46px -26px rgb(0 0 0/.72);
+  --cast-3:0 64px 84px -44px rgb(0 0 0/.82);
+
+  /* motion */
+  --snap:cubic-bezier(.2,.78,.24,1);
+  --swing:cubic-bezier(.55,.05,.15,1);
+}

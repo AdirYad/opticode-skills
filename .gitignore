@@ -1,0 +1,15 @@
+# Buyer data written on first run
+brand.json
+config.json
+.env
+*.key
+
+# Build output and tools
+node_modules/
+__pycache__/
+*.pyc
+out/
+check/
+*.bak
+.DS_Store
+Thumbs.db

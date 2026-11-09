@@ -1,0 +1,83 @@
+/* LandingOS stages: optional mechanisms. Add this file (and stages.js where noted) only when a page uses them. */
+
+/* HERO DUO: figure beside a leaning phone, small live chips stuck on top */
+.duo{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.86fr);align-items:end;width:min(100%,600px);justify-self:center}
+.duo .phone{width:100%;rotate:-5deg;margin-block-end:8%;z-index:1}
+.chip{position:absolute;z-index:2;display:flex;align-items:center;gap:7px;padding:6px 12px 8px;background:var(--chalk);color:var(--night);border-radius:var(--r-1);font-size:15px;font-weight:800;box-shadow:var(--cast-2);white-space:nowrap;animation:hover 6s ease-in-out infinite}
+.chip svg{width:18px;height:18px;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;color:var(--night)}
+.chip--ping{inset-block-start:10%;inset-inline-end:2%}
+.chip--ping::before{content:"";width:10px;height:10px;border-radius:var(--r-disc);background:var(--bad);animation:blink 1.4s steps(2) infinite}
+.chip--count{inset-block-start:46%;inset-inline-start:-1%;animation-delay:-2s;background:var(--flare);color:var(--on-flare);font:700 34px/.9 var(--face-poster)}
+.chip--done{inset-block-end:9%;inset-inline-end:8%;animation-delay:-4s;background:var(--field);color:var(--on-field)}
+
+/* WHAT IS OVER: big rows, each icon turns as it arrives */
+.over{display:grid;margin-block-start:var(--s-4)}
+.over__row{display:flex;align-items:center;justify-content:space-between;gap:var(--s-3);padding-block:var(--s-3);border-block-end:1.5px solid var(--line-2);font:700 var(--fs-h3)/1 var(--face-poster)}
+.over__row svg{flex:none;width:clamp(30px,3vw,46px);height:clamp(30px,3vw,46px);fill:none;stroke:var(--text-2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .4s linear .55s}
+.over__row.in svg{stroke:var(--bad)}
+
+/* SWITCHER: one screen, many results (needs stages.js) */
+.multi{display:grid;gap:var(--s-5);justify-items:center;align-items:center}
+.multi .phone__screen{position:relative}
+.multi__view{position:absolute;inset:0;opacity:0;transition:opacity .5s linear;display:grid}
+.multi__view.on{opacity:1}
+.multi__tabs{display:grid;gap:var(--s-2);width:100%;max-width:440px}
+.multi__tab{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:7px;padding:var(--s-2) var(--s-3);background:var(--shelf-2);border-radius:var(--r-1);font-weight:800}
+.multi__tab:focus-visible{outline:3px solid var(--field)}
+.multi__tab i{height:3px;background:var(--line);overflow:hidden;position:relative}
+.multi__tab i::after{content:"";position:absolute;inset:0;background:var(--em);scale:0 1;transform-origin:100% 50%}
+.multi__tab.on{background:var(--shelf-3)}
+.multi__tab.on i::after{animation:fill-tab var(--hold,4.6s) linear forwards}
+.multi.picked .multi__tab.on i::after{animation:none;scale:1 1}
+@keyframes fill-tab{to{scale:1 1}}
+@media (min-width:860px){.multi{grid-template-columns:auto minmax(0,1fr);gap:var(--s-7)}}
+
+/* ONE COMMAND: typed, fills the slots, spreads over the week (needs stages.js) */
+.cmd{display:grid;gap:var(--s-4)}
+.cmd__bar{display:flex;align-items:center;gap:var(--s-2);padding:var(--s-3);min-height:68px;background:var(--pit);border:1.5px solid var(--line-2);border-radius:var(--r-1);font-weight:600}
+.cmd__bar [data-td-text]{flex:1}
+.cmd__bar [data-td-text]::after{content:"";display:inline-block;width:2px;height:1.05em;margin-inline-start:3px;vertical-align:-.15em;background:var(--flare);animation:blink 1s steps(2) infinite}
+.cmd__slots{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s-2);transition:opacity .4s linear}
+.cmd.spread .cmd__slots{opacity:.32}
+.cmd__slot{aspect-ratio:1;border-radius:var(--r-1);background:var(--shelf-2);overflow:hidden;display:grid}
+.cmd__slot img{width:100%;height:100%;object-fit:cover;opacity:0;scale:.72;transition:opacity .25s linear,scale .4s var(--snap)}
+.cmd__slot.on img{opacity:1;scale:1}
+.cmd__slot.on{box-shadow:inset 0 0 0 2px var(--em)}
+.cmd__week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:var(--s-1);text-align:center;font-size:14px;font-weight:800;color:var(--text-2)}
+.cmd__day{display:grid;gap:var(--s-1)}
+.cmd__tile{aspect-ratio:9/13;border-radius:var(--r-1);background:var(--shelf-2);opacity:.3;transition:opacity .3s linear,translate .4s var(--snap),background .3s linear;translate:0 10px;overflow:hidden}
+.cmd__tile.on{opacity:1;translate:none;background:var(--em)}
+.cmd__tile img{width:100%;height:100%;object-fit:cover}
+
+/* TRIED: everything that failed, then the line, then the wipe */
+.tried{display:grid;gap:var(--s-3)}
+.tried__item{position:relative;padding:var(--s-4);padding-inline-end:66px;background:var(--shelf-2);border-radius:var(--r-2);display:grid;gap:var(--s-1)}
+.tried__x{position:absolute;inset-block-start:var(--s-3);inset-inline-end:var(--s-3);width:36px;height:36px;display:grid;place-items:center;border-radius:var(--r-disc);background:var(--bad);color:var(--night)}
+.tried__x svg{width:20px;height:20px;fill:none;stroke-width:3;stroke-linecap:round}
+.bigline{font-size:clamp(84px,12vw + 28px,220px);line-height:.86;margin-block:var(--s-6);max-width:9em}
+@media (min-width:760px){.tried{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* WIPE: two frames, one native range input as the handle (needs stages.js) */
+.wipe{position:relative;width:min(100%,780px);margin-inline:auto;border-radius:var(--r-2);overflow:hidden;box-shadow:var(--cast-3);--cut:50%;isolation:isolate}
+.wipe__a,.wipe__b{display:grid}
+.wipe__b{position:absolute;inset:0;clip-path:inset(0 0 0 var(--cut))}
+.wipe img{width:100%;height:100%;object-fit:cover}
+.wipe__tag{position:absolute;inset-block-start:var(--s-2);padding:1px 10px 3px;background:var(--night);color:var(--chalk);font-size:15px;font-weight:800;border-radius:var(--r-1);z-index:2}
+.wipe__a .wipe__tag{inset-inline-end:var(--s-2)}
+.wipe__b .wipe__tag{inset-inline-start:var(--s-2)}
+.wipe::after{content:"";position:absolute;inset-block:0;left:var(--cut);width:3px;margin-left:-1.5px;background:var(--flare);z-index:2;pointer-events:none}
+.wipe input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:3;touch-action:pan-y}
+
+/* OUTCOMES: a badge bitten into the corner */
+.ocards{display:grid;gap:var(--s-5) var(--s-3)}
+.ocard{position:relative;padding:var(--s-5) var(--s-4) var(--s-4);background:var(--shelf-2);border-radius:var(--r-2);display:grid;gap:var(--s-2)}
+.ocard__badge{position:absolute;inset-block-start:-22px;inset-inline-start:var(--s-3);width:60px;height:60px;display:grid;place-items:center;border-radius:var(--r-disc);background:var(--flare);color:var(--on-flare);rotate:-8deg;box-shadow:var(--cast-1)}
+.ocard__badge svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+@media (min-width:760px){.ocards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* THREE OPTIONS: two faded, one printed in full colour */
+.opts{display:grid;gap:var(--s-3);align-items:stretch}
+.opt{display:grid;gap:var(--s-2);align-content:start;padding:var(--s-4);background:var(--shelf-2);border-radius:var(--r-2);opacity:.62}
+.opt--on{opacity:1;background:var(--field);--text:var(--on-field);--text-2:var(--on-field);color:var(--on-field);box-shadow:var(--cast-3)}
+.opt--on .btn{justify-self:stretch;margin-block-start:var(--s-3)}
+@media (min-width:860px){.opts{grid-template-columns:repeat(3,minmax(0,1fr))}}

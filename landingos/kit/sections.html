@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LandingOS blocks</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karantina:wght@400;700&family=Assistant:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="blocks.css">
+<link rel="stylesheet" href="stages.css">
+<script>(function(h){h.classList.add('js');setTimeout(function(){if(!window.__pageOn)h.classList.remove('js')},2500)})(document.documentElement)</script>
+</head>
+<body>
+<script src="jump-guard.js"></script>
+<!--
+  LandingOS block library. Open it in a browser to see every block, or copy a block into a page by its comment name.
+  Replace every [bracket] with real copy and every .slot with the real image or video named inside it.
+  Never ship a [bracket] or a .slot. Blocks marked (stages) also need stages.css, and stages.js where the block says so.
+  Band colour and texture are per page: two neighbouring sections never share one.
+-->
+<main id="page">
+
+<!-- ===== 1. Front page: promise, button, figure on a sun, press belt ===== -->
+<section class="front" id="s-hero">
+  <div class="wrap front__grid">
+    <div class="front__words">
+      <p class="front__for">[למי זה]</p>
+      <h1 class="front__title">[כותרת הדף]</h1>
+      <p class="front__promise">[תת כותרת: מה מקבלים ותוך כמה זמן]</p>
+      <div class="front__action">
+        <a class="btn" href="#s-final">[טקסט הכפתור]</a>
+        <p class="reassure">[שורת הרגעה]</p>
+      </div>
+    </div>
+    <div class="sun">
+      <span class="sun__orbit"></span><span class="sun__disc"></span>
+      <!-- real cut-out: <img src="assets/expert.webp" alt="[שם]" width="530" height="860" fetchpriority="high"> -->
+      <div class="slot" style="--r:530/860">צילום של המומחה בלי רקע (PNG או WebP שקוף), אנכי, עם תנועת יד</div>
+    </div>
+  </div>
+  <div class="belt">
+    <p class="belt__label">[כפי שהופיע ב:]</p>
+    <div class="marquee"><div class="marquee__track">
+      <!-- 6 to 8 light logos on transparent. A wide wordmark gets class="logo--wide". page.js duplicates them for the loop. -->
+    </div></div>
+  </div>
+</section>
+
+<!-- ===== 2. Pain story: giant line, lighting words, mood plate, the sentence that hurts ===== -->
+<section class="band band--shelf tx-rays" id="s-story">
+  <div class="wrap">
+    <h2 class="reveal">[כותרת ענקית על הכאב]</h2>
+    <div class="story__grid">
+      <div class="litlines" data-sfade>
+        <p>[שורה ראשונה של הסיפור]</p>
+        <p>[שורה שנייה של הסיפור]</p>
+        <p class="tail">[שורת סיום]</p>
+      </div>
+      <figure class="plate reveal"><div class="slot" style="--r:3/2">תמונת אווירה של הרגע הכואב, בלי פנים (1400×933)</div></figure>
+    </div>
+    <h3 class="outcry reveal">[המשפט שכואב]</h3>
+  </div>
+</section>
+
+<!-- ===== 3. Authority: evidence laid out as printed things ===== -->
+<section class="band tx-hatch" id="s-about">
+  <div class="wrap stack">
+    <div class="bio">
+      <figure class="plate plate--backed reveal"><div class="slot" style="--r:4/5">דיוקן אמיתי של המומחה, חיתוך 4:5</div></figure>
+      <div class="bio__copy">
+        <h2 class="reveal">[מי אני]</h2>
+        <p class="lede reveal">[הסיפור בכמה שורות]</p>
+        <p class="reveal">[המשך הסיפור]</p>
+      </div>
+    </div>
+    <div class="prints">
+      <figure class="print fly-r" style="--tilt:-6deg"><div class="slot" style="--r:1/1">תמונה מהדרך 1</div></figure>
+      <figure class="print reveal" style="--tilt:2deg;z-index:1"><div class="slot" style="--r:1/1">תמונה מהדרך 2</div></figure>
+      <figure class="print fly-l" style="--tilt:7deg"><div class="slot" style="--r:1/1">תמונה מהדרך 3</div></figure>
+    </div>
+    <div class="creds">
+      <figure class="plate reveal"><div class="slot" style="--r:4/3">צילום של תעודה או הסמכה</div></figure>
+      <div class="creds__tray reveal"><!-- logos of schools and associations, light on transparent, 44px tall --><div class="slot" style="--r:4/1">לוגואים של מוסדות הלימוד</div></div>
+    </div>
+    <div class="onstage">
+      <figure class="plate reveal"><div class="slot" style="--r:4/5">המומחה על במה או מלמד</div></figure>
+      <figure class="plate reveal" data-d="2"><div class="slot" style="--r:4/5">המומחה על במה או מלמד, זווית אחרת</div></figure>
+    </div>
+    <div class="clips">
+      <figure class="win fly-r"><div class="win__bar"><i></i><i></i><i></i></div><div class="slot" style="--r:4/3;border:0;border-radius:0">צילום מסך של כתבה אמיתית</div><figcaption>[שם המקור]</figcaption></figure>
+      <figure class="win fly-l" data-d="1"><div class="win__bar"><i></i><i></i><i></i></div><div class="slot" style="--r:4/3;border:0;border-radius:0">צילום מסך של כתבה אמיתית</div><figcaption>[שם המקור]</figcaption></figure>
+      <figure class="win fly-r" data-d="2"><div class="win__bar"><i></i><i></i><i></i></div><div class="slot" style="--r:4/3;border:0;border-radius:0">צילום מסך של כתבה אמיתית</div><figcaption>[שם המקור]</figcaption></figure>
+    </div>
+    <div class="tally reveal">
+      <div><b data-count="120">120</b><span>[מה סופרים]</span></div>
+      <div><b data-count="8">8</b><span>[מה סופרים]</span></div>
+      <div><b data-count="3400">3,400</b><span>[מה סופרים]</span></div>
+    </div>
+    <div class="reach">
+      <div class="reach__copy"><h3 class="reveal">[כמה אנשים עוקבים אחרי זה]</h3><p class="reveal">[משפט]</p></div>
+      <div class="float"><div class="phone"><div class="phone__screen"><div class="slot" style="--r:auto">צילום מסך של הפרופיל</div></div></div></div>
+    </div>
+    <div class="reels">
+      <div class="reels__track" data-dots data-bleed>
+        <figure class="reel" style="--at:0"><div class="slot" style="--r:auto">סרטון + מספר צפיות אמיתי</div><span class="reel__views">[צפיות]</span></figure>
+        <figure class="reel" style="--at:1"><div class="slot" style="--r:auto">סרטון + מספר צפיות אמיתי</div><span class="reel__views">[צפיות]</span></figure>
+        <figure class="reel" style="--at:2"><div class="slot" style="--r:auto">סרטון + מספר צפיות אמיתי</div><span class="reel__views">[צפיות]</span></figure>
+        <figure class="reel" style="--at:3"><div class="slot" style="--r:auto">סרטון + מספר צפיות אמיתי</div><span class="reel__views">[צפיות]</span></figure>
+        <figure class="reel" style="--at:4"><div class="slot" style="--r:auto">סרטון + מספר צפיות אמיתי</div><span class="reel__views">[צפיות]</span></figure>
+      </div>
+      <div class="dots"></div>
+    </div>
+    <div class="notes">
+      <div class="fly-r"><div class="slot" style="--r:4/5">צילום מסך של הודעה אמיתית</div></div>
+      <div class="fly-l" data-d="1"><div class="slot" style="--r:1/1">צילום מסך של הודעה אמיתית</div></div>
+      <div class="fly-r" data-d="2"><div class="slot" style="--r:3/4">צילום מסך של הודעה אמיתית</div></div>
+      <div class="fly-l" data-d="3"><div class="slot" style="--r:1/1">צילום מסך של הודעה אמיתית</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. Big statistic: number, people, source ===== -->
+<section class="band band--field" id="s-stats">
+  <div class="wrap tally-line">
+    <div>
+      <span class="mega reveal">[1 מ-3]</span>
+      <div class="people reveal" aria-hidden="true">
+        <svg viewBox="0 0 34 82"><circle cx="17" cy="11" r="10"/><path d="M4 31q0-8 8-8h10q8 0 8 8v25h-5v26H9V56H4z"/></svg>
+        <svg viewBox="0 0 34 82"><circle cx="17" cy="11" r="10"/><path d="M4 31q0-8 8-8h10q8 0 8 8v25h-5v26H9V56H4z"/></svg>
+        <svg viewBox="0 0 34 82"><circle cx="17" cy="11" r="10"/><path d="M4 31q0-8 8-8h10q8 0 8 8v25h-5v26H9V56H4z"/></svg>
+      </div>
+      <h3 class="reveal">[מה המספר אומר]</h3>
+    </div>
+    <figure class="win sheet reveal"><div class="win__bar"><i></i><i></i><i></i></div><div class="slot" style="--r:4/3;border:0;border-radius:0">צילום מסך של המקור האמיתי של הנתון</div><figcaption>[שם המקור]</figcaption></figure>
+  </div>
+</section>
+
+<!-- ===== 5. Success ring: set --p to the exact percentage ===== -->
+<section class="band tx-rays" id="s-rate">
+  <div class="wrap rate">
+    <div class="ring94 reveal" style="--p:94">
+      <svg viewBox="0 0 200 200"><circle class="ring94__base" cx="100" cy="100" r="96"/><circle class="ring94__fill" pathLength="100" cx="100" cy="100" r="96"/></svg>
+      <div class="ring94__pic"><div class="slot" style="--r:1/1">תמונה עגולה שקשורה לתוצאה</div></div>
+    </div>
+    <div><h2 class="reveal"><span class="flare">[94%]</span> [מה הצליח]</h2><p class="lede reveal">[הסבר קצר]</p></div>
+  </div>
+</section>
+
+<!-- ===== 6. What does not work: drawn marks and one humour image ===== -->
+<section class="band band--shelf tx-hatch" id="s-dontwork">
+  <div class="wrap narrow">
+    <h2 class="reveal">[מה לא עובד]</h2>
+    <ul class="checks">
+      <li class="tick tick--no reveal" data-d="1"><span class="tick__mark"><svg viewBox="0 0 24 24"><path class="draw" pathLength="1" d="M6 6l12 12"/><path class="draw" pathLength="1" d="M18 6L6 18"/></svg></span><span>[פריט]</span></li>
+      <li class="tick tick--no reveal" data-d="2"><span class="tick__mark"><svg viewBox="0 0 24 24"><path class="draw" pathLength="1" d="M6 6l12 12"/><path class="draw" pathLength="1" d="M18 6L6 18"/></svg></span><span>[פריט]</span></li>
+      <li class="tick tick--no reveal" data-d="3"><span class="tick__mark"><svg viewBox="0 0 24 24"><path class="draw" pathLength="1" d="M6 6l12 12"/><path class="draw" pathLength="1" d="M18 6L6 18"/></svg></span><span>[פריט]</span></li>
+    </ul>
+    <div class="dont__joke"><p class="lede reveal">[שורת הומור]</p><figure class="plate reveal"><div class="slot" style="--r:4/3">GIF הומוריסטי (WebP מונפש)</div></figure></div>
+  </div>
+</section>
+
+<!-- ===== 7. Product reveal: the name is the biggest word on the page. Use a band the button stands out on (field or night), never flare ===== -->
+<section class="band band--field" id="s-product">
+  <div class="wrap">
+    <h2 class="reveal-name reveal">[שם המוצר]</h2>
+    <p class="lede reveal-lead reveal">[מה זה במשפט אחד]</p>
+    <div class="float product__mock reveal"><div class="slot" style="--r:1900/1072">מוקאפ של כל המכשירים (שקוף, 1900×1072)</div></div>
+    <div class="go reveal"><a class="btn" href="#s-final">[טקסט הכפתור]</a></div>
+  </div>
+</section>
+
+<!-- ===== 8. Route: steps on a line that draws with the scroll ===== -->
+<section class="band tx-halftone" id="s-syllabus">
+  <div class="wrap">
+    <div class="head"><h2 class="reveal">[הדרך, שלב אחרי שלב]</h2></div>
+    <div class="route" data-progress>
+      <span class="route__line"></span>
+      <ol>
+        <li class="stop reveal"><span class="stop__n">1</span><figure class="plate"><div class="slot" style="--r:16/10">מוקאפ של השלב</div></figure><h3>[שם השלב]</h3><p>[מה יוצא ממנו]</p></li>
+        <li class="stop reveal"><span class="stop__n">2</span><figure class="plate"><div class="slot" style="--r:16/10">מוקאפ של השלב</div></figure><h3>[שם השלב]</h3><p>[מה יוצא ממנו]</p></li>
+        <li class="stop reveal"><span class="stop__n">3</span><figure class="plate"><div class="slot" style="--r:16/10">מוקאפ של השלב</div></figure><h3>[שם השלב]</h3><p>[מה יוצא ממנו]</p></li>
+        <li class="stop reveal"><span class="stop__n">4</span><figure class="plate"><div class="slot" style="--r:16/10">מוקאפ של השלב</div></figure><h3>[שם השלב]</h3><p>[מה יוצא ממנו]</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. Bonuses: tickets with a stub ===== -->
+<section class="band band--shelf tx-bars" id="s-bonus">
+  <div class="wrap">
+    <div class="head"><h2 class="reveal">[בונוסים]</h2></div>
+    <div class="bcards">
+      <article class="bcard reveal"><div class="bcard__art"><div class="slot" style="--r:16/10">מוקאפ של הבונוס</div></div><div class="bcard__stub"><span class="bcard__tag">[בונוס 1]</span><h3>[שם]</h3><p class="small">[מה זה חוסך]</p><span class="bcard__worth price-ink">[שווי ₪0]</span></div></article>
+      <article class="bcard reveal" data-d="1"><div class="bcard__art"><div class="slot" style="--r:16/10">מוקאפ של הבונוס</div></div><div class="bcard__stub"><span class="bcard__tag">[בונוס 2]</span><h3>[שם]</h3><p class="small">[מה זה חוסך]</p><span class="bcard__worth price-ink">[שווי ₪0]</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10. Who it is for, and the door held shut ===== -->
+<section class="band tx-halftone" id="s-who">
+  <div class="wrap narrow">
+    <h2 class="reveal">[למי זה]</h2>
+    <ul class="checks">
+      <li class="tick tick--yes reveal" data-d="1"><span class="tick__mark"><svg viewBox="0 0 24 24"><path class="draw" pathLength="1" d="M5 13l5 5L19 7"/></svg></span><span>[פריט]</span></li>
+      <li class="tick tick--yes reveal" data-d="2"><span class="tick__mark"><svg viewBox="0 0 24 24"><path class="draw" pathLength="1" d="M5 13l5 5L19 7"/></svg></span><span>[פריט]</span></li>
+      <li class="tick tick--yes reveal" data-d="3"><span class="tick__mark"><svg viewBox="0 0 24 24"><path class="draw" pathLength="1" d="M5 13l5 5L19 7"/></svg></span><span>[פריט]</span></li>
+    </ul>
+    <div class="door reveal"><h3 class="t3">[ולמי לא]</h3><p class="small">[טקסט]</p></div>
+  </div>
+</section>
+
+<!-- ===== 11. Proof wall: slips of paper. Text retyped letter for letter; .slip__name--hidden only when the person asked for privacy ===== -->
+<section class="band band--pit tx-bars" id="s-proof">
+  <div class="wrap">
+    <div class="head"><h2 class="reveal">[מה אומרים אנשים שכבר עשו את זה]</h2></div>
+    <div class="wall" data-dots data-bleed>
+      <figure class="pf reveal"><div class="slip__from"><span class="slip__face"></span><span class="slip__id"><b class="slip__name">[שם]</b><span class="slip__time">[שעה]</span></span></div><blockquote class="slip__msg">[ההודעה אות באות, <span class="proofmark">המשפט החזק</span>]</blockquote></figure>
+      <figure class="pf pf--loud reveal" data-d="1"><div class="slip__from"><span class="slip__face"></span><span class="slip__id"><b class="slip__name">[שם]</b><span class="slip__time">[שעה]</span></span></div><blockquote class="slip__msg">[ההודעה הכי חזקה, <span class="proofmark">המשפט החזק</span>]</blockquote></figure>
+      <figure class="pf pf--chat reveal" data-d="2"><div class="slip__from"><span class="slip__face"></span><span class="slip__id"><span class="slip__name slip__name--hidden" style="--w:92px"></span><span class="slip__time">[שעה]</span></span></div>
+        <p class="line">[הודעה]<time>[שעה]</time></p><p class="line line--out">[תשובה]<time>[שעה]</time></p><p class="line">[הודעה]<time>[שעה]</time></p></figure>
+      <figure class="pf reveal"><div class="slip__from"><span class="slip__face"></span><span class="slip__id"><b class="slip__name">[שם]</b><span class="slip__time">[שעה]</span></span></div><blockquote class="slip__msg">[ההודעה אות באות]</blockquote></figure>
+      <figure class="pf reveal" data-d="1"><div class="slip__from"><span class="slip__face"></span><span class="slip__id"><b class="slip__name">[שם]</b><span class="slip__time">[שעה]</span></span></div><blockquote class="slip__msg">[ההודעה אות באות]</blockquote></figure>
+      <figure class="pf reveal" data-d="2"><div class="slip__from"><span class="slip__face"></span><span class="slip__id"><b class="slip__name">[שם]</b><span class="slip__time">[שעה]</span></span></div><blockquote class="slip__msg">[ההודעה אות באות]</blockquote></figure>
+    </div>
+    <div class="dots"></div>
+  </div>
+</section>
+
+<!-- ===== 12. Price anchor: what it costs elsewhere, on a till receipt ===== -->
+<section class="band band--shelf tx-rays" id="s-anchor">
+  <div class="wrap">
+    <div class="head"><h2 class="reveal">[כמה זה עולה בדרך הרגילה]</h2></div>
+    <div class="till reveal">
+      <div class="till__row"><span>[פריט]</span><i></i><b>&lrm;₪0</b></div>
+      <div class="till__row"><span>[פריט]</span><i></i><b>&lrm;₪0</b></div>
+      <div class="till__row"><span>[פריט]</span><i></i><b>&lrm;₪0</b></div>
+      <div class="till__sum"><span>[סך הכל]</span><span>&lrm;₪0</span></div>
+    </div>
+    <p class="pause-line reveal">[שורת סגירה]</p>
+  </div>
+</section>
+
+<!-- ===== 13. Offer: value stack beside the coupon. Coupon stays on a .sheet so the button keeps its colour ===== -->
+<section class="band band--flare tx-halftone" id="s-offer">
+  <div class="wrap">
+    <div class="head"><h2 class="reveal">[מה מקבלים]</h2></div>
+    <div class="deal">
+      <div class="vstack reveal">
+        <div class="vstack__row"><span>[פריט]</span><b>&lrm;₪0</b></div>
+        <div class="vstack__row"><span>[פריט]</span><b>&lrm;₪0</b></div>
+        <div class="vstack__row"><span>[פריט]</span><b>&lrm;₪0</b></div>
+        <div class="vstack__row vstack__sum"><span>[שווי כולל]</span><b>&lrm;₪0</b></div>
+      </div>
+      <div class="pricecard sheet reveal">
+        <div class="float"><div class="slot" style="--r:16/9">מוקאפ של המוצר</div></div>
+        <p class="price-was"><s>&lrm;₪0</s></p>
+        <p class="price-now">&lrm;₪0</p>
+        <p class="split-pay">[או 3 תשלומים של ₪0]</p>
+        <a class="btn btn--live" href="[קישור תשלום]">[טקסט הכפתור]</a>
+        <div class="pay"><div class="slot" style="--r:6/1;padding:4px">לוגואים של אמצעי תשלום</div></div>
+        <p class="notes-line">[שורת הרגעה]</p>
+        <p class="notes-line">[שורת הרגעה]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 14. Why it works: phone on a sun, reasons, expert beside one proof ===== -->
+<section class="band tx-hatch" id="s-mechanism">
+  <div class="wrap">
+    <div class="why">
+      <div class="why__device"><div class="sun"><span class="sun__disc"></span><div class="phone reveal"><div class="phone__screen"><div class="slot" style="--r:auto">צילום מסך של הדבר עובד</div></div></div></div></div>
+      <div>
+        <h2 class="reveal">[למה זה עובד]</h2>
+        <ul class="reasons">
+          <li class="reason reveal"><svg viewBox="0 0 48 48"><circle class="blink" cx="24" cy="24" r="6"/><circle cx="24" cy="24" r="18"/></svg><div><h3 class="t3">[סיבה]</h3><p class="small">[הסבר]</p></div></li>
+          <li class="reason reveal" data-d="1"><svg viewBox="0 0 48 48"><path class="spin" d="M24 6v8M24 34v8M6 24h8M34 24h8"/><circle cx="24" cy="24" r="8"/></svg><div><h3 class="t3">[סיבה]</h3><p class="small">[הסבר]</p></div></li>
+          <li class="reason reveal" data-d="2"><svg viewBox="0 0 48 48"><path class="nod" d="M10 30l14-14 14 14"/><path d="M10 40h28"/></svg><div><h3 class="t3">[סיבה]</h3><p class="small">[הסבר]</p></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="why__after">
+      <div class="sun"><span class="sun__disc"></span><div class="slot" style="--r:530/700">צילום של המומחה בלי רקע</div></div>
+      <figure class="pf reveal" style="margin:0"><div class="slip__from"><span class="slip__face"></span><span class="slip__id"><b class="slip__name">[שם]</b><span class="slip__time">[שעה]</span></span></div><blockquote class="slip__msg">[הודעה שמוכיחה את המנגנון]</blockquote></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 15. Guarantee: one stamped promise ===== -->
+<section class="band band--field" id="s-guarantee">
+  <div class="wrap">
+    <div class="safe__card sheet reveal">
+      <span class="seal"><svg viewBox="0 0 48 48"><rect x="11" y="21" width="26" height="20" rx="3"/><path d="M16 21v-6a8 8 0 0 1 16 0v6"/></svg></span>
+      <h3>[הבטחה]</h3>
+      <p>[הפירוט בשתי שורות]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 16. FAQ: native details. The shared name attribute keeps one open ===== -->
+<section class="band tx-halftone" id="s-faq">
+  <div class="wrap narrow">
+    <div class="sun faq__face"><span class="sun__disc"></span><div class="slot" style="--r:1/1">צילום שובב של המומחה בלי רקע</div></div>
+    <h2 class="reveal">[שאלות שעולות לפני שמצטרפים]</h2>
+    <div class="faq">
+      <details name="faq" open><summary>[שאלה]</summary><div class="faq__reply"><p>[תשובה]</p></div></details>
+      <details name="faq"><summary>[שאלה]</summary><div class="faq__reply"><p>[תשובה]</p></div></details>
+      <details name="faq"><summary>[שאלה]</summary><div class="faq__reply"><p>[תשובה]</p></div></details>
+      <details name="faq"><summary>[שאלת המחיר, תמיד אחרונה]</summary><div class="faq__reply"><p>[תשובה]</p><a class="btn" href="#s-final">[טקסט הכפתור]</a></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 17. Close: everything in one sheet ===== -->
+<section class="band band--flare tx-rays" id="s-final">
+  <div class="wrap narrow">
+    <div class="pricecard sheet closing reveal">
+      <div class="float"><div class="slot" style="--r:16/9">מוקאפ של המוצר</div></div>
+      <div class="says"><span class="says__ava"><div class="slot" style="--r:1/1">תמונה</div></span><p class="says__bubble">[משפט סיום אישי של המומחה]</p></div>
+      <p class="price-was"><s>&lrm;₪0</s></p>
+      <p class="price-now">&lrm;₪0</p>
+      <p class="split-pay">[או 3 תשלומים של ₪0]</p>
+      <ul class="got">
+        <li><svg viewBox="0 0 24 24"><path d="M5 13l5 5L19 7"/></svg><span>[מה כלול]</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 13l5 5L19 7"/></svg><span>[מה כלול]</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 13l5 5L19 7"/></svg><span>[מה כלול]</span></li>
+      </ul>
+      <form class="buyform" action="[כתובת הטופס]" method="post">
+        <label for="buyemail">[שם השדה]</label>
+        <input id="buyemail" name="email" type="email" required placeholder="[דוגמה]" autocomplete="email">
+        <button class="btn btn--live" type="submit">[טקסט הכפתור]</button>
+      </form>
+      <div class="pay"><div class="slot" style="--r:6/1;padding:4px">לוגואים של אמצעי תשלום</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 18. Hero duo (stages): figure beside a leaning phone, live chips. Replaces .sun in block 1 ===== -->
+<section class="front" id="s-hero-duo">
+  <div class="wrap front__grid">
+    <div class="front__words">
+      <h1 class="front__title">[כותרת הדף]</h1>
+      <p class="front__promise">[תת כותרת]</p>
+      <div class="front__action"><a class="btn" href="#s-final">[טקסט הכפתור]</a></div>
+    </div>
+    <div class="duo">
+      <div class="slot" style="--r:530/860">צילום של המומחה בלי רקע, מצביע אל הטלפון</div>
+      <div class="phone"><div class="phone__screen"><!-- <video src="assets/loop.mp4" autoplay muted loop playsinline poster="assets/loop.jpg"></video> --><div class="slot" style="--r:auto">סרטון קצר של התוצאה</div></div></div>
+      <span class="chip chip--ping">[התראה]</span>
+      <span class="chip chip--count"><span data-count="128">128</span></span>
+      <span class="chip chip--done"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l5 5L19 7"/></svg>[בוצע]</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 19. What is over (stages): big rows, each icon turns on arrival ===== -->
+<section class="band band--shelf tx-bars" id="s-over">
+  <div class="wrap">
+    <h2 class="reveal">[הימים של X נגמרו]</h2>
+    <div class="over">
+      <p class="over__row reveal"><span>[מה נגמר]</span><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 14v11l7 5"/></svg></p>
+      <p class="over__row reveal" data-d="1"><span>[מה נגמר]</span><svg viewBox="0 0 48 48"><rect x="8" y="11" width="32" height="28" rx="3"/><path d="M8 20h32M17 6v8M31 6v8"/></svg></p>
+      <p class="over__row reveal" data-d="2"><span>[מה נגמר]</span><svg viewBox="0 0 48 48"><path d="M8 12h32v22H20l-9 8v-8H8z"/></svg></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 20. Switcher (stages + stages.js): one screen, many results ===== -->
+<section class="band tx-halftone" id="s-looks">
+  <div class="wrap">
+    <div class="head"><h2 class="reveal">[אותו דבר, בכמה גרסאות]</h2></div>
+    <div class="multi" data-switch data-hold="4600">
+      <div class="phone"><div class="phone__screen">
+        <div class="multi__view on"><div class="slot" style="--r:auto">גרסה 1: סרטון קצר או צילום מסך</div></div>
+        <div class="multi__view"><div class="slot" style="--r:auto">גרסה 2: סרטון קצר או צילום מסך</div></div>
+        <div class="multi__view"><div class="slot" style="--r:auto">גרסה 3: סרטון קצר או צילום מסך</div></div>
+      </div></div>
+      <div class="multi__tabs">
+        <button class="multi__tab on" type="button">[גרסה 1]<i></i></button>
+        <button class="multi__tab" type="button">[גרסה 2]<i></i></button>
+        <button class="multi__tab" type="button">[גרסה 3]<i></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 21. One command, many results (stages + stages.js) ===== -->
+<section class="band band--pit tx-hatch" id="s-ten">
+  <div class="wrap narrow">
+    <div class="head"><h2 class="reveal">[פעולה אחת, הרבה תוצאות]</h2></div>
+    <div class="cmd" data-td data-td-prompts="[פקודה ראשונה]|[פקודה שנייה]|[פקודה שלישית]">
+      <div class="cmd__bar"><span data-td-text>[פקודה ראשונה]</span></div>
+      <div class="cmd__slots">
+        <div class="cmd__slot"></div><div class="cmd__slot"></div><div class="cmd__slot"></div><div class="cmd__slot"></div><div class="cmd__slot"></div>
+        <div class="cmd__slot"></div><div class="cmd__slot"></div><div class="cmd__slot"></div><div class="cmd__slot"></div><div class="cmd__slot"></div>
+      </div>
+      <div class="cmd__week">
+        <div class="cmd__day">[א]<div class="cmd__tile"></div></div>
+        <div class="cmd__day">[ב]<div class="cmd__tile"></div></div>
+        <div class="cmd__day">[ג]<div class="cmd__tile"></div></div>
+        <div class="cmd__day">[ד]<div class="cmd__tile"></div></div>
+        <div class="cmd__day">[ה]<div class="cmd__tile"></div></div>
+        <div class="cmd__day">[ו]<div class="cmd__tile"></div></div>
+        <div class="cmd__day">[ש]<div class="cmd__tile"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 22. Tried alternatives, the giant line, before and after (stages + stages.js) ===== -->
+<section class="band band--shelf tx-rays" id="s-tried">
+  <div class="wrap">
+    <div class="head"><h2 class="reveal">[מה כבר ניסית]</h2></div>
+    <div class="tried">
+      <article class="tried__item reveal"><span class="tried__x"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M6 6l12 12M18 6L6 18"/></svg></span><h3 class="t3">[מה ניסו]</h3><p class="small">[למה זה נפל]</p></article>
+      <article class="tried__item reveal" data-d="1"><span class="tried__x"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M6 6l12 12M18 6L6 18"/></svg></span><h3 class="t3">[מה ניסו]</h3><p class="small">[למה זה נפל]</p></article>
+      <article class="tried__item reveal"><span class="tried__x"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M6 6l12 12M18 6L6 18"/></svg></span><h3 class="t3">[מה ניסו]</h3><p class="small">[למה זה נפל]</p></article>
+      <article class="tried__item reveal" data-d="1"><span class="tried__x"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M6 6l12 12M18 6L6 18"/></svg></span><h3 class="t3">[מה ניסו]</h3><p class="small">[למה זה נפל]</p></article>
+    </div>
+    <h3 class="bigline reveal">[יש דרך אחרת]</h3>
+    <div class="wipe reveal" data-cmp>
+      <div class="wipe__a"><span class="wipe__tag">[לפני]</span><div class="slot" style="--r:4/3;border-radius:0">תמונת לפני, אותה תנוחה ואותו זום</div></div>
+      <div class="wipe__b"><span class="wipe__tag">[אחרי]</span><div class="slot" style="--r:4/3;border-radius:0;background:var(--shelf-3)">תמונת אחרי, אותה תנוחה ואותו זום</div></div>
+      <input type="range" min="0" max="100" value="50" dir="ltr" aria-label="[לפני ואחרי]">
+    </div>
+  </div>
+</section>
+
+<!-- ===== 23. Outcomes (stages): a badge bitten into the corner ===== -->
+<section class="band tx-bars" id="s-outcomes">
+  <div class="wrap">
+    <div class="head"><h2 class="reveal">[מה יהיה לך בסוף]</h2></div>
+    <div class="ocards">
+      <article class="ocard reveal"><span class="ocard__badge"><svg viewBox="0 0 48 48"><path d="M8 26l11 11 21-24"/></svg></span><h3>[תוצאה]</h3><p class="small">[מה זה נותן]</p></article>
+      <article class="ocard reveal" data-d="1"><span class="ocard__badge"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 14v10l7 4"/></svg></span><h3>[תוצאה]</h3><p class="small">[מה זה נותן]</p></article>
+      <article class="ocard reveal"><span class="ocard__badge"><svg viewBox="0 0 48 48"><path d="M8 38l11-13 8 7 13-18"/></svg></span><h3>[תוצאה]</h3><p class="small">[מה זה נותן]</p></article>
+      <article class="ocard reveal" data-d="1"><span class="ocard__badge"><svg viewBox="0 0 48 48"><path d="M24 6l6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2z"/></svg></span><h3>[תוצאה]</h3><p class="small">[מה זה נותן]</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 24. Three options, one lit (stages) ===== -->
+<section class="band band--shelf tx-hatch" id="s-choice">
+  <div class="wrap">
+    <div class="head"><h2 class="reveal">[יש לך שלוש אפשרויות]</h2></div>
+    <div class="opts">
+      <article class="opt reveal"><h3>[אפשרות 1]</h3><p>[מה קורה אם ממשיכים ככה]</p></article>
+      <article class="opt reveal" data-d="1"><h3>[אפשרות 2]</h3><p>[מה קורה אם עושים לבד]</p></article>
+      <article class="opt opt--on reveal" data-d="2"><h3>[אפשרות 3]</h3><p>[מה קורה אם מצטרפים]</p><a class="btn" href="#s-final">[טקסט הכפתור]</a></article>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>© [שם]. כל הזכויות שמורות.</footer>
+<script src="page.js"></script>
+<script src="stages.js"></script>
+</body>
+</html>
